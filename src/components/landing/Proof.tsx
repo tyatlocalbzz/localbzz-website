@@ -1,6 +1,6 @@
 import { Quote } from 'lucide-react'
 import { Reveal } from '../ui/Reveal'
-import { motion, useMotionValue, useSpring, animate } from 'framer-motion'
+import { motion, useMotionValue, useSpring, useInView } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
 
 const testimonials = [
@@ -39,13 +39,88 @@ const testimonials = [
 // Duplicate for infinite scroll effect
 const duplicatedTestimonials = [...testimonials, ...testimonials]
 
+// Card component with hover effects
+const TestimonialCard = ({ item, index, baseIndex }: { item: typeof testimonials[0], index: number, baseIndex: number }) => {
+  const [isCardHovered, setIsCardHovered] = useState(false)
+
+  // Parallax depth - cards at different positions move at slightly different speeds
+  const depthOffset = (baseIndex % 3) * 0.15 // 0, 0.15, or 0.3
+
+  return (
+    <motion.div
+      className="w-[400px] h-[280px] flex-shrink-0 bg-brand-dark border-2 border-white/20 p-8 flex flex-col cursor-pointer"
+      onMouseEnter={() => setIsCardHovered(true)}
+      onMouseLeave={() => setIsCardHovered(false)}
+      animate={{
+        scale: isCardHovered ? 1.02 : 1,
+        y: isCardHovered ? -8 : 0,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 400,
+        damping: 25,
+      }}
+      style={{
+        boxShadow: isCardHovered
+          ? '0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.1)'
+          : '0 0 0 rgba(0,0,0,0)',
+        borderColor: isCardHovered ? 'rgba(255,255,255,0.4)' : 'rgba(255,255,255,0.2)',
+      }}
+    >
+      {/* Client name & type */}
+      <div className="text-center mb-6">
+        <h3 className="font-display text-2xl uppercase text-white mb-1">
+          {item.name}
+        </h3>
+        <p className="font-mono text-xs text-neutral-400 uppercase tracking-widest">
+          {item.type}
+        </p>
+      </div>
+
+      {/* Quote */}
+      <div className="flex-1">
+        {item.logo ? (
+          <motion.img
+            src={item.logo}
+            alt={`${item.name} logo`}
+            className="w-12 h-12 object-contain mb-4 mx-auto"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+          />
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+          >
+            <Quote className="w-8 h-8 text-brand-gold mb-4 rotate-180 mx-auto" aria-hidden="true" />
+          </motion.div>
+        )}
+        <blockquote className="text-lg text-neutral-300 leading-relaxed text-center">
+          "{item.quote}"
+        </blockquote>
+      </div>
+    </motion.div>
+  )
+}
+
 const Proof: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
   const [contentWidth, setContentWidth] = useState(0)
   const x = useMotionValue(0)
   const baseVelocity = -50 // pixels per second
   const [isHovered, setIsHovered] = useState(false)
-  const animationRef = useRef<ReturnType<typeof animate> | null>(null)
+  const [hasAnimatedIn, setHasAnimatedIn] = useState(false)
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
+
+  // Trigger staggered entrance when in view
+  useEffect(() => {
+    if (isInView && !hasAnimatedIn) {
+      setHasAnimatedIn(true)
+    }
+  }, [isInView, hasAnimatedIn])
 
   // Measure content width
   useEffect(() => {
@@ -97,7 +172,7 @@ const Proof: React.FC = () => {
   }, [contentWidth, smoothVelocity, x])
 
   return (
-    <section className="py-24 bg-brand-dark text-white overflow-hidden">
+    <section ref={sectionRef} className="py-24 bg-brand-dark text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-12">
         <Reveal>
           <h2 className="font-display text-4xl md:text-5xl uppercase text-white">
@@ -120,38 +195,23 @@ const Proof: React.FC = () => {
             width: 'max-content',
           }}
         >
-          {duplicatedTestimonials.map((item, i) => (
-            <div
-              key={i}
-              className="w-[400px] flex-shrink-0 bg-brand-dark border-2 border-white/20 p-8 flex flex-col"
-            >
-              {/* Client name & type */}
-              <div className="text-center mb-6">
-                <h3 className="font-display text-2xl uppercase text-white mb-1">
-                  {item.name}
-                </h3>
-                <p className="font-mono text-xs text-neutral-400 uppercase tracking-widest">
-                  {item.type}
-                </p>
-              </div>
-
-              {/* Quote */}
-              <div className="flex-1">
-                {item.logo ? (
-                  <img
-                    src={item.logo}
-                    alt={`${item.name} logo`}
-                    className="w-12 h-12 object-contain mb-4 mx-auto"
-                  />
-                ) : (
-                  <Quote className="w-8 h-8 text-brand-gold mb-4 rotate-180 mx-auto" aria-hidden="true" />
-                )}
-                <blockquote className="text-lg text-neutral-300 leading-relaxed text-center">
-                  "{item.quote}"
-                </blockquote>
-              </div>
-            </div>
-          ))}
+          {duplicatedTestimonials.map((item, i) => {
+            const baseIndex = i % testimonials.length
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                animate={hasAnimatedIn ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 0.6,
+                  delay: (baseIndex * 0.1), // Stagger based on original index
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
+              >
+                <TestimonialCard item={item} index={i} baseIndex={baseIndex} />
+              </motion.div>
+            )
+          })}
         </motion.div>
       </div>
     </section>
