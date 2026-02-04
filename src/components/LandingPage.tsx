@@ -2,7 +2,6 @@ import Hero from './landing/Hero'
 import Positioning from './landing/Positioning'
 import Partnership from './landing/Partnership'
 import Pricing from './landing/Pricing'
-import AfterNinetyDays from './landing/AfterNinetyDays'
 import Proof from './landing/Proof'
 import Contact from './landing/Contact'
 
@@ -17,9 +16,8 @@ const LandingPage = ({ onContactClick }: LandingPageProps) => {
       <Positioning />
       <Partnership />
       <Pricing />
-      <AfterNinetyDays />
-      <Contact onContactClick={onContactClick} />
       <Proof />
+      <Contact onContactClick={onContactClick} />
     </div>
   )
 }

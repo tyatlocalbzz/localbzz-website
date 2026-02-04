@@ -44,9 +44,27 @@ const Pricing: React.FC = () => {
         </Reveal>
 
         <Reveal delay={0.4}>
-          <p className="text-lg text-neutral-600 leading-relaxed">
+          <p className="text-lg text-neutral-600 leading-relaxed mb-12">
             By the end, you'll see what it feels like to have marketing handled.
           </p>
+        </Reveal>
+
+        {/* After 90 Days Card */}
+        <Reveal delay={0.5}>
+          <div className="bg-brand-dark text-white p-8 md:p-10 max-w-2xl">
+            <h3 className="font-display text-2xl md:text-3xl uppercase text-white mb-6">
+              Day 91+
+            </h3>
+            <p className="text-lg text-neutral-300 mb-4 leading-relaxed">
+              Once we've proven it works, we keep going. Same team. Same rhythm. Month after month.
+            </p>
+            <p className="text-lg text-neutral-300 mb-6 leading-relaxed">
+              Or you walk away with everything we built. It's yours either way.
+            </p>
+            <p className="text-xl font-medium text-brand-gold">
+              You own everything we create—no matter what.
+            </p>
+          </div>
         </Reveal>
       </div>
     </section>
