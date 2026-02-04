@@ -38,7 +38,7 @@ const PaperCard = ({
 
   // Retain rotate prop support if passed explicitly, but default is 'none'
   const rotateClasses = {
-    none: '',
+    none: 'hover:rotate-2',
     left: '-rotate-1 hover:rotate-0',
     right: 'rotate-1 hover:rotate-0',
   }

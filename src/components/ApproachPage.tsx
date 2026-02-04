@@ -159,29 +159,29 @@ const ApproachPage = ({ onContactClick }: ApproachPageProps) => {
                 name: 'Jeff',
                 role: 'Relationships',
                 desc: 'First call. Monthly check-ins. Makes sure things are working.',
-                img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop',
+                img: '/images/jeff-headshot.png',
               },
               {
                 name: 'Ty',
                 role: 'Words',
                 desc: 'Strategy, messaging, and the voice that sounds like you.',
-                img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop',
+                img: '/images/ty-headshot.png',
               },
               {
-                name: 'Corey',
+                name: 'Corrie',
                 role: 'Visuals',
                 desc: 'Shoots, edits, and handles everything you see.',
-                img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop',
+                img: '/images/corrie-headshot.png',
               },
             ].map((member, i) => (
               <StaggerItem key={i}>
                 <PaperCard className="bg-white flex flex-col h-full" variant="white">
-                  <div className="w-full aspect-square bg-neutral-100 mb-6 overflow-hidden border-2 border-brand-dark">
+                  <div className="w-full aspect-square mb-6 overflow-hidden">
                     <img
                       src={member.img}
                       alt={`${member.name}, ${member.role}`}
                       loading="lazy"
-                      className="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-300"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                   <h3 className="font-display text-3xl uppercase text-brand-dark">{member.name}</h3>

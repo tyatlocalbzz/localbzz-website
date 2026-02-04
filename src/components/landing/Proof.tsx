@@ -31,7 +31,7 @@ const testimonials = [
   {
     name: "Marty Bryan",
     type: "Marty B's",
-    quote: "Placeholder quote for Marty Bryan testimonial.",
+    quote: "LocalBzz gets it. They know how to capture who we are and share it with the people who need to see it.",
     logo: "/images/martybs-logo.png"
   }
 ]
@@ -48,7 +48,7 @@ const TestimonialCard = ({ item, index, baseIndex }: { item: typeof testimonials
 
   return (
     <motion.div
-      className="w-[400px] h-[280px] flex-shrink-0 bg-brand-dark border-2 border-white/20 p-8 flex flex-col cursor-pointer"
+      className="w-[400px] h-[336px] flex-shrink-0 bg-brand-dark border-2 border-white/20 p-8 flex flex-col cursor-pointer"
       onMouseEnter={() => setIsCardHovered(true)}
       onMouseLeave={() => setIsCardHovered(false)}
       animate={{

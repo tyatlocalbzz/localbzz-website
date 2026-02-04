@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import LandingPage from './components/LandingPage'
 import ApproachPage from './components/ApproachPage'
 
-type View = 'home' | 'approach'
-
-const App = () => {
-  const [currentView, setCurrentView] = useState<View>('home')
+const AppContent = () => {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const currentView = location.pathname === '/approach' ? 'approach' : 'home'
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact')
@@ -15,18 +15,29 @@ const App = () => {
     }
   }
 
+  const handleNavigate = (view: 'home' | 'approach') => {
+    navigate(view === 'home' ? '/' : '/approach')
+  }
+
   return (
     <Layout
       currentView={currentView}
-      onNavigate={setCurrentView}
+      onNavigate={handleNavigate}
       onContactClick={scrollToContact}
     >
-      {currentView === 'home' ? (
-        <LandingPage onContactClick={scrollToContact} />
-      ) : (
-        <ApproachPage onContactClick={scrollToContact} />
-      )}
+      <Routes>
+        <Route path="/" element={<LandingPage onContactClick={scrollToContact} />} />
+        <Route path="/approach" element={<ApproachPage onContactClick={scrollToContact} />} />
+      </Routes>
     </Layout>
+  )
+}
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   )
 }
 
