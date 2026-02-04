@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: "44 Farms",
     type: "Ranch & Premium Beef",
-    quote: "They invest the time to understand our business, then jump right in. They're not just executing—they're thinking."
+    quote: "They invest the time to understand our business, then jump right in. They're not just executing, they're thinking."
   },
   {
     name: "Marty Bryan",

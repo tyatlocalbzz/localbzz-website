@@ -28,7 +28,7 @@ const ApproachPage = ({ onContactClick }: ApproachPageProps) => {
           </Reveal>
           <Reveal delay={0.2} direction="right">
             <p className="text-neutral-600 text-xl md:text-2xl max-w-2xl mt-8">
-              The people who know you—they trust you. They come back. They send their friends. The problem isn't your business. It's that what's true about you isn't visible to everyone else.
+              The people who know you, they trust you. They come back. They send their friends. The problem isn't your business. It's that what's true about you isn't visible to everyone else.
             </p>
           </Reveal>
         </div>
@@ -56,7 +56,7 @@ const ApproachPage = ({ onContactClick }: ApproachPageProps) => {
               {
                 icon: <Fingerprint className="w-8 h-8 text-brand-dark" strokeWidth={2.5} />,
                 title: 'Who You Are',
-                desc: 'The real personality that attracts the right people—not a polished version that could be anyone.',
+                desc: 'The real personality that attracts the right people, not a polished version that could be anyone.',
               },
               {
                 icon: <MessageSquareQuote className="w-8 h-8 text-brand-dark" strokeWidth={2.5} />,
@@ -93,7 +93,7 @@ const ApproachPage = ({ onContactClick }: ApproachPageProps) => {
           </Reveal>
           <Reveal delay={0.2}>
             <p className="text-xl text-neutral-600 max-w-3xl mb-16">
-              Most marketing teams wait for direction. We show up knowing what to do. We learn your business well enough to have opinions—and we act on them.
+              Most marketing teams wait for direction. We show up knowing what to do. We learn your business well enough to have opinions, and we act on them.
             </p>
           </Reveal>
 
@@ -122,10 +122,10 @@ const ApproachPage = ({ onContactClick }: ApproachPageProps) => {
                 <h3 className="font-display text-2xl uppercase mb-6 text-brand-dark">What that means for you</h3>
                 <ul className="space-y-4">
                   {[
-                    'You don\'t come up with ideas—we do',
-                    'You don\'t approve every post—we handle it',
-                    'You don\'t explain your business every month—we already know',
-                    'You run your business—we make sure the right people find it',
+                    'You don\'t come up with ideas, we do',
+                    'You don\'t approve every post, we handle it',
+                    'You don\'t explain your business every month, we already know',
+                    'You run your business, we make sure the right people find it',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-4 text-lg text-brand-dark">
                       <Check className="text-brand-dark shrink-0 mt-1" strokeWidth={3} />

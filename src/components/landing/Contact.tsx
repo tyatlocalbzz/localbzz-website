@@ -15,7 +15,7 @@ const Contact: React.FC<ContactProps> = ({ onContactClick }) => {
             Let's see if there's a fit.
           </h2>
           <p className="text-lg mb-4 text-brand-dark/80">
-            This works best with trust on both sides. We're looking for business owners who want marketing handled—not managed. Who'd rather have a partner that leads than a vendor that waits.
+            This works best with trust on both sides. We're looking for business owners who want marketing handled, not managed. Who'd rather have a partner that leads than a vendor that waits.
           </p>
           <p className="text-lg mb-10 text-brand-dark/80">
             Schedule a 30-minute call. We'll ask about your business and your customers. If we can help, we'll tell you how. If not, we'll tell you that too.

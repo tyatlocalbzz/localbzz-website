@@ -2,8 +2,8 @@ import { Check } from 'lucide-react'
 import { Reveal } from '../ui/Reveal'
 
 const deliverables = [
-  'Professional photos and video of your business',
-  'A website that tells your story and drives inquiries',
+  'Content that shows people who you actually are',
+  'An online experience that tells your story and drives inquiries',
   "Social media that's active, consistent, and sounds like you",
   'A clear message that attracts the right customers',
 ]
@@ -21,7 +21,7 @@ const Pricing: React.FC = () => {
 
         <Reveal delay={0.1}>
           <p className="text-lg text-neutral-700 mb-12 max-w-3xl leading-relaxed">
-            It's a shorter commitment—but not a slower pace. We move fast to build momentum and get you real results. By the end, you'll have the proof you need to feel confident about working together long-term.
+            Shorter commitment. Faster pace. Enough time to build real momentum, and for you to see what changes.
           </p>
         </Reveal>
 
@@ -45,7 +45,7 @@ const Pricing: React.FC = () => {
 
         <Reveal delay={0.4}>
           <p className="text-lg text-neutral-600 leading-relaxed mb-12">
-            By the end, you'll see what it feels like to have marketing handled.
+            By the end, more of the right people are finding you, and you're not thinking about marketing anymore.
           </p>
         </Reveal>
 
@@ -62,7 +62,7 @@ const Pricing: React.FC = () => {
               Or you walk away with everything we built. It's yours either way.
             </p>
             <p className="text-xl font-medium text-brand-gold">
-              You own everything we create—no matter what.
+              You own everything we create, no matter what.
             </p>
           </div>
         </Reveal>

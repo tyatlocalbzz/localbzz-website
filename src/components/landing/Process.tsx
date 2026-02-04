@@ -4,7 +4,7 @@ import { Reveal, StaggerContainer, StaggerItem } from '../ui/Reveal'
 const benefits = [
   {
     title: 'More of the right people find you',
-    desc: "Google, social, your website—you show up where they're looking. Not a dead page from 2019.",
+    desc: "Google, social, your website, you show up where they're looking. Not a dead page from 2019.",
   },
   {
     title: 'They show up ready to buy',

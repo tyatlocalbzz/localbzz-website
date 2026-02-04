@@ -20,7 +20,7 @@ const Partnership: React.FC = () => {
           </Reveal>
           <Reveal delay={0.2}>
             <p>
-              More of the customers that make business easy—the ones who trust you, come back, and send their friends—find you. They get it before they get there. You stop explaining your business to people who should already understand.
+              More of the customers that make business easy, the ones who trust you, come back, and send their friends, find you. They get it before they get there. You stop explaining your business to people who should already understand.
             </p>
           </Reveal>
         </div>

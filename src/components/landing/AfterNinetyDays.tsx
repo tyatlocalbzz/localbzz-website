@@ -18,7 +18,7 @@ const AfterNinetyDays: React.FC = () => {
 
         <Reveal delay={0.2}>
           <p className="text-xl font-medium text-brand-gold">
-            You own everything we create—no matter what.
+            You own everything we create, no matter what.
           </p>
         </Reveal>
       </div>

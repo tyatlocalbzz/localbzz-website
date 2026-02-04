@@ -1,6 +1,6 @@
 import { Reveal } from '../ui/Reveal'
 
-const roles = ['Founders', 'Operators', 'Leaders', 'People Who Build Things']
+const roles = ['Entrepreneurs', 'Operators', 'Leaders', 'People Who Build Things']
 
 const Positioning: React.FC = () => {
   return (

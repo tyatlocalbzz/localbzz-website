@@ -25,7 +25,7 @@ const NotForEveryone: React.FC = () => {
 
         <Reveal delay={0.15}>
           <p className="text-lg text-neutral-300 mb-8">
-            We're looking for business owners who want marketing handled — not managed. Who trust us to lead, not wait for direction. Who care about results more than control.
+            We're looking for business owners who want marketing handled, not managed. Who trust us to lead, not wait for direction. Who care about results more than control.
           </p>
         </Reveal>
 
@@ -42,7 +42,7 @@ const NotForEveryone: React.FC = () => {
 
         <Reveal delay={0.3}>
           <p className="text-xl text-white font-medium">
-            But if you want a partner who shows up knowing what to do — keep reading.
+            But if you want a partner who shows up knowing what to do, keep reading.
           </p>
         </Reveal>
       </div>

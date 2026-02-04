@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
       <div className="max-w-7xl mx-auto w-full relative z-10 py-20">
         <Reveal>
           <p className="font-mono text-xs md:text-sm text-neutral-400 mb-6 uppercase tracking-widest">
-            Marketing for People Who Build Things <span className="text-brand-gold">•</span> DFW TEX
+            Marketing for People Who Build Things <span className="text-brand-gold">•</span> DFW
           </p>
         </Reveal>
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl uppercase leading-[0.9] mb-8 drop-shadow-lg">
