@@ -52,8 +52,8 @@ const TestimonialCard = ({ item, index, baseIndex }: { item: typeof testimonials
       onMouseEnter={() => setIsCardHovered(true)}
       onMouseLeave={() => setIsCardHovered(false)}
       animate={{
-        scale: isCardHovered ? 1.02 : 1,
-        y: isCardHovered ? -8 : 0,
+        scale: isCardHovered ? 1.01 : 1,
+        y: isCardHovered ? -4 : 0,
       }}
       transition={{
         type: "spring",
