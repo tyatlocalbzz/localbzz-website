@@ -83,6 +83,7 @@ const TestimonialCard = ({ item, index, baseIndex }: { item: typeof testimonials
           <motion.img
             src={item.logo}
             alt={`${item.name} logo`}
+            loading="lazy"
             className="w-12 h-12 object-contain mb-4 mx-auto"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}

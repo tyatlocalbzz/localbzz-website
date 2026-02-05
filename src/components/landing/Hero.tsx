@@ -14,7 +14,9 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
       {/* Background Image - fades from left, more visible on right */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/hero-owner.png"
+          src="/images/hero-owner.webp"
+          width={2816}
+          height={1536}
           className="w-full h-full object-cover -scale-x-100"
           alt=""
           aria-hidden="true"

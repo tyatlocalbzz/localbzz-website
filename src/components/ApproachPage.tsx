@@ -159,19 +159,19 @@ const ApproachPage = ({ onContactClick }: ApproachPageProps) => {
                 name: 'Jeff',
                 role: 'Relationships',
                 desc: 'First call. Monthly check-ins. Makes sure things are working.',
-                img: '/images/jeff-headshot.png',
+                img: '/images/jeff-headshot.webp',
               },
               {
                 name: 'Ty',
                 role: 'Words',
                 desc: 'Strategy, messaging, and the voice that sounds like you.',
-                img: '/images/ty-headshot.png',
+                img: '/images/ty-headshot.webp',
               },
               {
                 name: 'Corrie',
                 role: 'Visuals',
                 desc: 'Shoots, edits, and handles everything you see.',
-                img: '/images/corrie-headshot.png',
+                img: '/images/corrie-headshot.webp',
               },
             ].map((member, i) => (
               <StaggerItem key={i}>

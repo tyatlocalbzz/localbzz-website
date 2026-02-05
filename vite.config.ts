@@ -12,4 +12,21 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  build: {
+    // Enable minification (esbuild is default and faster)
+    minify: 'esbuild',
+    // Chunk splitting for better caching
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'framer-motion': ['framer-motion'],
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+        },
+      },
+    },
+    // Warn if chunk exceeds 500KB
+    chunkSizeWarningLimit: 500,
+    // Generate source maps for production debugging
+    sourcemap: false,
+  },
 })

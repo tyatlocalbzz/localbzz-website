@@ -1,4 +1,4 @@
-import { useState, useEffect, type ReactNode } from 'react'
+import { useState, useEffect, useRef, type ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Button from '../ui/Button'
 import { NOISE_SVG_DATA_URI } from '../../lib/theme'
@@ -17,9 +17,9 @@ const Layout = ({
   onContactClick,
 }: LayoutProps) => {
   const [visible, setVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [hasLoaded, setHasLoaded] = useState(false)
+  const lastScrollY = useRef(0)
 
   // Trigger entrance animation on mount
   useEffect(() => {
@@ -34,7 +34,7 @@ const Layout = ({
       // Always show at the top
       if (currentScrollY < 50) {
         setVisible(true)
-      } else if (currentScrollY > lastScrollY) {
+      } else if (currentScrollY > lastScrollY.current) {
         // Scrolling down - hide
         setVisible(false)
         setMobileMenuOpen(false) // Close mobile menu on scroll
@@ -43,12 +43,12 @@ const Layout = ({
         setVisible(true)
       }
 
-      setLastScrollY(currentScrollY)
+      lastScrollY.current = currentScrollY
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY])
+  }, [])
 
   // Close mobile menu on escape key
   useEffect(() => {
@@ -282,8 +282,9 @@ const Layout = ({
         >
           <div className="flex items-center gap-2">
             <img
-              src="/images/localbzz-logo.png"
+              src="/images/localbzz-logo.webp"
               alt=""
+              loading="lazy"
               className="w-6 h-6 object-contain opacity-50"
             />
             <span>LocalBzz</span>

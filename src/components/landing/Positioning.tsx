@@ -43,7 +43,9 @@ const Positioning: React.FC = () => {
           <Reveal direction="left" delay={0.2} className="hidden lg:block">
             <div className="aspect-[4/5] overflow-hidden border-[3px] border-brand-dark group">
               <img
-                src="/images/positioning-hero.png"
+                src="/images/positioning-hero.webp"
+                width={1696}
+                height={2528}
                 alt="Local business owner at work"
                 loading="lazy"
                 className="w-full h-full object-cover grayscale contrast-125 transition-transform duration-300 group-hover:scale-110"
