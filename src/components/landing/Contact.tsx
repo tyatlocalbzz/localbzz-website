@@ -122,25 +122,27 @@ const Contact: React.FC = () => {
             <div className="bg-brand-dark text-white pt-8 pb-7 px-8 sm:pt-10 sm:pb-8 sm:px-10 md:pt-10 md:pb-8 md:px-14 border-2 border-brand-dark mb-10 md:mb-14 max-w-xl mx-auto">
               <h3 className="font-display text-lg sm:text-xl uppercase mb-6 text-center">You'll walk away with:</h3>
               {/* Centered list container */}
-              <ul className="space-y-5 inline-block text-left">
-                <li className="flex items-start gap-4">
-                  <LightBulbIcon className="w-5 h-5 text-brand-gold shrink-0 mt-[3px]" />
-                  <span className="text-sm sm:text-base">Clarity on what's actually holding your marketing back</span>
-                </li>
-                <li className="flex items-start gap-4">
-                  <DocumentTextIcon className="w-5 h-5 text-brand-gold shrink-0 mt-[3px]" />
-                  <span className="text-sm sm:text-base"><strong>2-3 things you can do this week</strong> to start seeing results</span>
-                </li>
-                <li className="flex items-start gap-4">
-                  <PhoneIcon className="w-5 h-5 text-brand-gold shrink-0 mt-[3px]" />
-                  <span className="text-sm sm:text-base">A clear next step, whether that's working together or not</span>
-                </li>
-              </ul>
+              <div className="flex justify-center">
+                <ul className="space-y-5 text-left">
+                  <li className="flex items-start gap-4">
+                    <LightBulbIcon className="w-5 h-5 text-brand-gold shrink-0 mt-[3px]" />
+                    <span className="text-sm sm:text-base">Clarity on what's actually holding your marketing back</span>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <DocumentTextIcon className="w-5 h-5 text-brand-gold shrink-0 mt-[3px]" />
+                    <span className="text-sm sm:text-base"><strong>2-3 things you can do this week</strong> to start seeing results</span>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <PhoneIcon className="w-5 h-5 text-brand-gold shrink-0 mt-[3px]" />
+                    <span className="text-sm sm:text-base">A clear next step, whether that's working together or not</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </Reveal>
 
           <Reveal delay={0.2}>
-            <div className="flex flex-col items-center">
+            <div className="max-w-xl mx-auto flex justify-center">
               <Button
                 variant="secondary"
                 onClick={openModal}
@@ -149,10 +151,6 @@ const Contact: React.FC = () => {
                 Get a Call Back
                 <ArrowRight className="w-5 h-5 ml-1 transition-transform group-hover:translate-x-1" />
               </Button>
-              {/* Footer text with better contrast and spacing */}
-              <p className="text-sm text-brand-dark/80 font-mono mt-5 tracking-wide">
-                DFW, TX · We'll reach out within 24 hours.
-              </p>
             </div>
           </Reveal>
         </div>
