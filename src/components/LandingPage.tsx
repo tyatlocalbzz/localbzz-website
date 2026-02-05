@@ -17,7 +17,7 @@ const LandingPage = ({ onContactClick }: LandingPageProps) => {
       <Partnership />
       <Pricing />
       <Proof />
-      <Contact onContactClick={onContactClick} />
+      <Contact />
     </div>
   )
 }

@@ -139,9 +139,9 @@ const Layout = ({
           transition={{ type: 'spring', stiffness: 400, damping: 25 }}
         >
           <img
-            src="/images/localbzz-logo.png"
+            src="/images/localbzz-icon-white.svg"
             alt="LocalBzz Logo"
-            className="w-10 h-10 object-contain"
+            className="w-8 h-8 object-contain"
           />
           <span className="font-display text-2xl uppercase tracking-tight">
             LOCAL<span className="text-brand-gold">BZZ</span>

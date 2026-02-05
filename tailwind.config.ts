@@ -15,6 +15,7 @@ export default {
       boxShadow: {
         hard: '6px 6px 0px 0px #111111',
         'hard-sm': '4px 4px 0px 0px #111111',
+        'hard-lg': '10px 10px 0px 0px #111111',
         'hard-white': '6px 6px 0px 0px #FFFFFF',
       },
       fontFamily: {
