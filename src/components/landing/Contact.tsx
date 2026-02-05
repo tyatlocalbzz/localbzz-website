@@ -104,21 +104,21 @@ const Contact: React.FC = () => {
     <>
       <section className="py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-brand-gold border-b-2 border-brand-dark relative overflow-hidden" id="contact">
         <div className="max-w-3xl mx-auto text-center relative z-10">
-          <Reveal>
+          <Reveal width="100%">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase mb-6 leading-[0.9]">
               Not sure if you need us?<br className="hidden sm:block" /> Let's find out.
             </h2>
           </Reveal>
 
           {/* Constrained subhead width for better readability */}
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} width="100%">
             <p className="text-base sm:text-lg md:text-xl mb-10 md:mb-12 text-brand-dark/90 leading-relaxed max-w-xl mx-auto">
               <strong>Let's talk.</strong> We'll listen first, ask questions, and give you an honest take on what's working and what's not. No pitch, just a real conversation about your business.
             </p>
           </Reveal>
 
           {/* Black box with centered content and optical adjustments */}
-          <Reveal delay={0.15}>
+          <Reveal delay={0.15} width="100%">
             <div className="bg-brand-dark text-white pt-8 pb-7 px-8 sm:pt-10 sm:pb-8 sm:px-10 md:pt-10 md:pb-8 md:px-14 border-2 border-brand-dark mb-10 md:mb-14 max-w-xl mx-auto">
               <h3 className="font-display text-lg sm:text-xl uppercase mb-6 text-center">You'll walk away with:</h3>
               {/* Centered list container */}
@@ -141,8 +141,8 @@ const Contact: React.FC = () => {
             </div>
           </Reveal>
 
-          <Reveal delay={0.2}>
-            <div className="max-w-xl mx-auto flex justify-center">
+          <Reveal delay={0.2} width="100%">
+            <div className="flex justify-center">
               <Button
                 variant="secondary"
                 onClick={openModal}
