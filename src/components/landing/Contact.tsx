@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { ArrowRight, Check, Loader2, FileText, Phone, Lightbulb, X } from 'lucide-react'
+import { ArrowRight, Check, Loader2, X } from 'lucide-react'
+import { LightBulbIcon, DocumentTextIcon, PhoneIcon } from '@heroicons/react/24/solid'
 import Button from '../ui/Button'
 import { Reveal } from '../ui/Reveal'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -109,28 +110,30 @@ const Contact: React.FC = () => {
             </h2>
           </Reveal>
 
+          {/* Constrained subhead width for better readability */}
           <Reveal delay={0.1}>
-            <p className="text-base sm:text-lg md:text-xl mb-10 md:mb-12 text-brand-dark/80 leading-relaxed max-w-2xl mx-auto">
-              Book a call. We'll listen first, ask questions, and give you an honest take on what's working and what's not. No pitch, just a real conversation about your business.
+            <p className="text-base sm:text-lg md:text-xl mb-10 md:mb-12 text-brand-dark/90 leading-relaxed max-w-xl mx-auto">
+              <strong>Let's talk.</strong> We'll listen first, ask questions, and give you an honest take on what's working and what's not. No pitch, just a real conversation about your business.
             </p>
           </Reveal>
 
-          {/* What you get - horizontal on desktop, stacked on mobile */}
+          {/* Black box with centered content and optical adjustments */}
           <Reveal delay={0.15}>
-            <div className="bg-brand-dark text-white p-6 sm:p-8 md:py-10 md:px-12 border-2 border-brand-dark mb-10 md:mb-14 max-w-2xl mx-auto">
-              <h3 className="font-display text-lg sm:text-xl uppercase mb-5 md:mb-8 text-center">You'll walk away with:</h3>
-              <ul className="space-y-4 md:space-y-5">
+            <div className="bg-brand-dark text-white pt-8 pb-7 px-8 sm:pt-10 sm:pb-8 sm:px-10 md:pt-10 md:pb-8 md:px-14 border-2 border-brand-dark mb-10 md:mb-14 max-w-xl mx-auto">
+              <h3 className="font-display text-lg sm:text-xl uppercase mb-6 text-center">You'll walk away with:</h3>
+              {/* Centered list container */}
+              <ul className="space-y-5 inline-block text-left">
                 <li className="flex items-start gap-4">
-                  <Lightbulb className="w-5 h-5 text-brand-gold shrink-0 mt-0.5" />
-                  <span className="text-sm sm:text-base text-left">Clarity on what's actually holding your marketing back</span>
+                  <LightBulbIcon className="w-5 h-5 text-brand-gold shrink-0 mt-[3px]" />
+                  <span className="text-sm sm:text-base">Clarity on what's actually holding your marketing back</span>
                 </li>
                 <li className="flex items-start gap-4">
-                  <FileText className="w-5 h-5 text-brand-gold shrink-0 mt-0.5" />
-                  <span className="text-sm sm:text-base text-left"><strong>2-3 things you can do this week</strong> to start seeing results</span>
+                  <DocumentTextIcon className="w-5 h-5 text-brand-gold shrink-0 mt-[3px]" />
+                  <span className="text-sm sm:text-base"><strong>2-3 things you can do this week</strong> to start seeing results</span>
                 </li>
                 <li className="flex items-start gap-4">
-                  <Phone className="w-5 h-5 text-brand-gold shrink-0 mt-0.5" />
-                  <span className="text-sm sm:text-base text-left">A clear next step, whether that's working together or not</span>
+                  <PhoneIcon className="w-5 h-5 text-brand-gold shrink-0 mt-[3px]" />
+                  <span className="text-sm sm:text-base">A clear next step, whether that's working together or not</span>
                 </li>
               </ul>
             </div>
@@ -144,9 +147,10 @@ const Contact: React.FC = () => {
                 className="group"
               >
                 Get a Call Back
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="w-5 h-5 ml-1 transition-transform group-hover:translate-x-1" />
               </Button>
-              <p className="text-xs text-brand-dark/60 font-mono mt-3">
+              {/* Footer text with better contrast and spacing */}
+              <p className="text-sm text-brand-dark/80 font-mono mt-5 tracking-wide">
                 DFW, TX · We'll reach out within 24 hours.
               </p>
             </div>
@@ -181,13 +185,13 @@ const Contact: React.FC = () => {
               className="relative w-full max-w-md bg-brand-paper border-2 border-brand-dark shadow-hard-lg"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Close button */}
+              {/* Close button - bolder X icon */}
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="absolute top-4 right-4 p-2 text-brand-dark/60 hover:text-brand-dark transition-colors"
+                className="absolute top-4 right-4 p-2 text-brand-dark hover:text-brand-dark/70 transition-colors"
                 aria-label="Close modal"
               >
-                <X className="w-5 h-5" />
+                <X className="w-6 h-6" strokeWidth={2.5} />
               </button>
 
               <div className="p-6 sm:p-8">
@@ -198,18 +202,21 @@ const Contact: React.FC = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}
-                      className="text-center py-8"
+                      className="text-center py-6"
                     >
-                      <div className="w-16 h-16 bg-brand-dark rounded-full flex items-center justify-center mx-auto mb-6">
-                        <Check className="w-8 h-8 text-brand-gold" />
+                      {/* Checkmark circle - optically centered icon */}
+                      <div className="w-16 h-16 bg-brand-dark rounded-full flex items-center justify-center mx-auto mb-5">
+                        <Check className="w-8 h-8 text-brand-gold translate-x-[1px]" strokeWidth={3} />
                       </div>
-                      <h3 className="font-display text-2xl uppercase mb-4">We got it.</h3>
-                      <p className="text-neutral-600 mb-6">
+                      <h3 className="font-display text-2xl uppercase mb-3">We got it.</h3>
+                      <p className="text-neutral-600 mb-5 max-w-xs mx-auto">
                         We'll call you within 24 hours to learn more about your business.
                       </p>
+                      {/* Full-width button for better visual anchoring */}
                       <Button
                         variant="secondary"
                         onClick={() => setIsModalOpen(false)}
+                        fullWidth
                       >
                         Close
                       </Button>
@@ -320,7 +327,7 @@ const Contact: React.FC = () => {
                         ) : (
                           <>
                             Get a Call Back
-                            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                            <ArrowRight className="w-5 h-5 ml-1 transition-transform group-hover:translate-x-1" />
                           </>
                         )}
                       </Button>

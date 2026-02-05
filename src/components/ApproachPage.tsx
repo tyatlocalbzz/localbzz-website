@@ -17,10 +17,10 @@ const ApproachPage = ({ onContactClick }: ApproachPageProps) => {
   return (
     <div className="flex flex-col">
       {/* HERO + THE GAP */}
-      <section className="min-h-[70vh] flex flex-col justify-center bg-white text-brand-dark px-6 py-20">
+      <section className="min-h-[70vh] flex flex-col justify-center bg-white text-brand-dark px-6 py-16 md:py-24">
         <div className="max-w-7xl mx-auto w-full">
           <Reveal>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl uppercase leading-[0.9] mb-8">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl uppercase leading-[1.1] mb-8">
               Your best customers <br />
               already get it. <br />
               <span className="text-brand-gold">Everyone else can't see it.</span>
@@ -153,7 +153,7 @@ const ApproachPage = ({ onContactClick }: ApproachPageProps) => {
             </Reveal>
           </div>
 
-          <StaggerContainer className="grid md:grid-cols-3 gap-8">
+          <StaggerContainer className="grid md:grid-cols-3 gap-6">
             {[
               {
                 name: 'Jeff',

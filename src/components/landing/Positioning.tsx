@@ -8,15 +8,16 @@ const Positioning: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
+            {/* Headline with increased line height to prevent text collision */}
             <Reveal>
-              <h2 className="font-display text-4xl md:text-6xl uppercase mb-8 leading-[1.1]">
+              <h2 className="font-display text-4xl md:text-6xl uppercase mb-8 leading-[1.15] md:leading-[1.1]">
                 Your reputation is strong. <span className="text-brand-dark/40">Not everyone can see it yet.</span>
               </h2>
             </Reveal>
 
-            {/* Role pills */}
+            {/* Role pills with proper gap for both horizontal and vertical spacing */}
             <Reveal delay={0.1}>
-              <div className="flex flex-wrap gap-2 mb-10">
+              <div className="flex flex-wrap gap-3 mb-12">
                 {roles.map((role, i) => (
                   <span
                     key={i}
@@ -28,17 +29,19 @@ const Positioning: React.FC = () => {
               </div>
             </Reveal>
 
-            <div className="space-y-5 text-lg text-neutral-700 leading-relaxed">
+            {/* Body copy with increased top margin for separation */}
+            <div className="space-y-5 text-lg leading-relaxed">
               <Reveal delay={0.2}>
-                <p>
+                <p className="text-neutral-600">
                   <strong className="text-brand-dark">Your best customers know how good you are.</strong> They talk about you. They send people your way. But someone encountering you for the first time? They can't see what your customers see. Not yet.
                 </p>
               </Reveal>
             </div>
           </div>
 
+          {/* Image with thicker border to match tags */}
           <Reveal direction="left" delay={0.2} className="hidden lg:block">
-            <div className="aspect-[4/5] overflow-hidden border-2 border-brand-dark group">
+            <div className="aspect-[4/5] overflow-hidden border-[3px] border-brand-dark group">
               <img
                 src="/images/positioning-hero.png"
                 alt="Local business owner at work"
