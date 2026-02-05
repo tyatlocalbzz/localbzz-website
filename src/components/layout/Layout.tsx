@@ -272,9 +272,9 @@ const Layout = ({
       <main className="pt-[72px]">{children}</main>
 
       {/* Footer */}
-      <footer role="contentinfo" className="bg-brand-dark text-neutral-500 py-12 px-6 border-t border-white/10">
+      <footer role="contentinfo" className="bg-brand-dark text-neutral-500 py-8 sm:py-10 md:py-12 px-4 sm:px-6 border-t border-white/10">
         <motion.div
-          className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs font-mono uppercase tracking-widest gap-4"
+          className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm font-mono uppercase tracking-widest gap-3 sm:gap-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -285,12 +285,12 @@ const Layout = ({
               src="/images/localbzz-logo.webp"
               alt=""
               loading="lazy"
-              className="w-6 h-6 object-contain opacity-50"
+              className="w-5 h-5 sm:w-6 sm:h-6 object-contain opacity-50"
             />
             <span>LocalBzz</span>
           </div>
           <address className="not-italic">Flower Mound, TX</address>
-          <div className="text-white">
+          <div className="text-white text-center sm:text-left">
             Marketing for people who build things.
           </div>
         </motion.div>

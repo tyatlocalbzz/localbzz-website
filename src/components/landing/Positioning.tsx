@@ -4,13 +4,13 @@ const roles = ['Entrepreneurs', 'Operators', 'Leaders', 'People Who Build Things
 
 const Positioning: React.FC = () => {
   return (
-    <section className="py-24 px-6 bg-brand-paper border-b-2 border-brand-dark">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-brand-paper border-b-2 border-brand-dark">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div>
             {/* Headline with increased line height to prevent text collision */}
             <Reveal>
-              <h2 className="font-display text-4xl md:text-6xl uppercase mb-8 leading-[1.15] md:leading-[1.1]">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-6xl uppercase mb-8 leading-[1.15] md:leading-[1.1]">
                 Your reputation is strong. <span className="text-brand-dark/40">Not everyone can see it yet.</span>
               </h2>
             </Reveal>
@@ -30,7 +30,7 @@ const Positioning: React.FC = () => {
             </Reveal>
 
             {/* Body copy with increased top margin for separation */}
-            <div className="space-y-5 text-lg leading-relaxed">
+            <div className="space-y-5 text-base sm:text-lg leading-relaxed">
               <Reveal delay={0.2}>
                 <p className="text-neutral-600">
                   <strong className="text-brand-dark">Your best customers know how good you are.</strong> They talk about you. They send people your way. But someone encountering you for the first time? They can't see what your customers see. Not yet.
@@ -40,7 +40,7 @@ const Positioning: React.FC = () => {
           </div>
 
           {/* Image with thicker border to match tags */}
-          <Reveal direction="left" delay={0.2} className="hidden lg:block">
+          <Reveal direction="left" delay={0.2} className="hidden md:block">
             <div className="aspect-[4/5] overflow-hidden border-[3px] border-brand-dark group">
               <img
                 src="/images/positioning-hero.webp"

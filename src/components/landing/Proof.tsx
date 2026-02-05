@@ -48,7 +48,7 @@ const TestimonialCard = ({ item, index, baseIndex }: { item: typeof testimonials
 
   return (
     <motion.div
-      className="w-[400px] h-[336px] flex-shrink-0 bg-brand-dark border-2 border-white/20 p-8 flex flex-col cursor-pointer"
+      className="w-[320px] sm:w-[400px] h-auto sm:h-[336px] flex-shrink-0 bg-brand-dark border-2 border-white/20 p-6 sm:p-8 flex flex-col cursor-pointer"
       onMouseEnter={() => setIsCardHovered(true)}
       onMouseLeave={() => setIsCardHovered(false)}
       animate={{
@@ -98,7 +98,7 @@ const TestimonialCard = ({ item, index, baseIndex }: { item: typeof testimonials
             <Quote className="w-8 h-8 text-brand-gold mb-4 rotate-180 mx-auto" aria-hidden="true" />
           </motion.div>
         )}
-        <blockquote className="text-lg text-neutral-300 leading-relaxed text-center">
+        <blockquote className="text-base sm:text-lg text-neutral-300 leading-relaxed text-center">
           "{item.quote}"
         </blockquote>
       </div>
@@ -173,10 +173,10 @@ const Proof: React.FC = () => {
   }, [contentWidth, smoothVelocity, x])
 
   return (
-    <section ref={sectionRef} className="py-24 bg-brand-dark text-white overflow-hidden">
+    <section ref={sectionRef} className="py-16 sm:py-20 md:py-24 bg-brand-dark text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-12">
         <Reveal>
-          <h2 className="font-display text-4xl md:text-5xl uppercase text-white">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl uppercase text-white">
             Businesses that trust us with theirs.
           </h2>
         </Reveal>
